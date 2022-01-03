@@ -1,4 +1,5 @@
-import 'package:first_app/home_page.dart';
+import 'package:first_app/pages/home_page.dart';
+import 'package:first_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,15 @@ class MyApp extends StatelessWidget {
     int days = 30;
     String s = "meghna";
     return MaterialApp(
-      home: HomePgae(),
+      // home: HomePgae(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.red),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => LoginPgae(),
+        "/home": (context) => HomePgae()
+      },
     );
   }
 }
